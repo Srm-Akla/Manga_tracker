@@ -8,28 +8,8 @@ import time
 
 header = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"}
 
-mangaread = [
-        "https://www.mangaread.org/manga/my-death-flags-show-no-sign-of-ending/",
-        "https://www.mangaread.org/manga/the-irregular-of-the-royal-academy-of-magic/",
-        "https://www.mangaread.org/manga/rebuild-world",
-        "https://www.mangaread.org/manga/the-beginning-after-the-end/",
-        "https://www.mangaread.org/manga/the-executed-sage-is-reincarnated-as-a-lich-and-starts-an-all-out-war/",
-        "https://www.mangaread.org/manga/return-of-the-frozen-player/",
-        "https://www.mangaread.org/manga/the-most-notorious-talker-runs-the-worlds-greatest-clan/",
-        "https://www.mangaread.org/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay/",
-        "https://www.mangaread.org/manga/regarding-reincarnated-to-slime-manga/",
-        "https://www.mangaread.org/manga/mushoku-tensei-isekai-ittara-honki-dasu-mangi/",
-        "https://www.mangaread.org/manga/former-general-is-undead-knight/",
-        "https://www.mangaread.org/manga/the-worlds-best-assassin-reincarnated-in-a-different-world-as-an-aristocratu",
-        "https://www.mangaread.org/manga/maou-gun-saikyou-no-majutsushi-wa-ningen-datta/",
-        "https://www.mangaread.org/manga/a-breakthrough-brought-by-forbidden-master-and-disciple/",
-        "https://www.mangaread.org/manga/juujika-no-rokunin/",
-        "https://www.mangaread.org/manga/mission-yozakura-family/",
-        "https://www.mangaread.org/manga/senmetsumadou-no-saikyou-kenja-musai-no-kenja-madou-wo-kiwame-saikyou-e-itaru/",
-        "https://www.mangaread.org/manga/a-stepmothers-marchen/"
-    ]
-
 mangakatana = [
+        "https://mangakatana.com/manga/again-my-life.24399",
         "https://mangakatana.com/manga/trash-of-the-counts-family.25137",
         "https://mangakatana.com/manga/the-beginning-after-the-end.16210",
         "https://mangakatana.com/manga/a-breakthrough-brought-by-forbidden-master-and-disciple.24731",
