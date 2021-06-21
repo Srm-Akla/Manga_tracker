@@ -30,6 +30,7 @@ mangakatana = [
         "https://mangakatana.com/manga/the-max-level-hero-has-returned.25329",
         "https://mangakatana.com/manga/skeleton-soldier-couldnt-protect-the-dungeon.20826",
         "http://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
+        "https://mangakatana.com/manga/baki-dou-2018.21422",
         "http://mangakatana.com/manga/juujika-no-rokunin.25073",
         "http://mangakatana.com/manga/karakai-jouzu-no-moto-takagi-san.19332",
         "https://mangakatana.com/manga/the-eminence-in-shadow.22020",
