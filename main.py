@@ -11,6 +11,7 @@ header = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/
 mangakatana = [
         "https://mangakatana.com/manga/again-my-life.24399",
         "https://mangakatana.com/manga/trash-of-the-counts-family.25137",
+        "https://mangakatana.com/manga/heroic-chronicles-of-the-three-continents.25442",
         "https://mangakatana.com/manga/the-beginning-after-the-end.16210",
         "https://mangakatana.com/manga/a-breakthrough-brought-by-forbidden-master-and-disciple.24731",
         "https://mangakatana.com/manga/kengan-omega.22093",
