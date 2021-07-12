@@ -17,6 +17,8 @@ mangakatana = [
         "https://mangakatana.com/manga/a-breakthrough-brought-by-forbidden-master-and-disciple.24731",
         "https://mangakatana.com/manga/kengan-omega.22093",
         "https://mangakatana.com/manga/the-worlds-best-assassin-reincarnated-in-a-different-world-as-an-aristocrat.22170",
+        "https://mangakatana.com/manga/the-most-notorious-talker-runs-the-worlds-greatest-clan.24837",
+        "https://mangakatana.com/manga/tensei-shitara-slime-datta-ken.1780",
         "https://mangakatana.com/manga/reincarnated-as-an-aristocrat-with-an-appraisal-skill.24873",
         "https://mangakatana.com/manga/slave-b.24525",
         "https://mangakatana.com/manga/lonely-attack-on-a-different-world.22195",
