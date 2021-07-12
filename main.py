@@ -21,6 +21,7 @@ mangakatana = [
         "https://mangakatana.com/manga/slave-b.24525",
         "https://mangakatana.com/manga/lonely-attack-on-a-different-world.22195",
         "https://mangakatana.com/manga/lv999-no-murabito.19065",
+        "http://mangakatana.com/manga/hero-has-returned.25839",
         "https://mangakatana.com/manga/fff-class-trashero.24073",
         "https://mangakatana.com/manga/spy-x-family.22629",
         "https://mangakatana.com/manga/mercenary-enrollment.25375",
@@ -43,19 +44,6 @@ mangakatana = [
         "https://mangakatana.com/manga/blue-lock.22750",
         "https://mangakatana.com/manga/memorize.25262"
     ]
-
-other = [
-        "https://www.mangaread.org/manga/the-eminence-in-shadow/"
-    ]
-
-
-def mangaread_func():
-    for i in other:
-        page = requests.get(i, headers=header).text
-        soup = BeautifulSoup(page, "lxml")
-        manga_name = soup.title.text
-        chapter_date = soup.find('div', class_='manga-chapters-holder')
-        print(manga_name, chapter_date)
 
 def mangakatana_func():
     for i in mangakatana:
