@@ -10,30 +10,23 @@ header = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/
 
 mangakatana = [
         "https://mangakatana.com/manga/again-my-life.24399",
-        "https://mangakatana.com/manga/trash-of-the-counts-family.25137",
         "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
         "https://mangakatana.com/manga/a-stepmothers-fairy-tale.23902",
         "https://mangakatana.com/manga/send-my-regards-to-kenshiro.24571",
         "https://mangakatana.com/manga/seoul-station-druid.25869",
         "https://mangakatana.com/manga/survival-story-of-a-sword-king-in-a-fantasy-world.24146",
         "https://mangakatana.com/manga/leveling-with-the-gods.25898",
-        "https://mangakatana.com/manga/return-of-the-8th-class-magician.25861",
         "https://mangakatana.com/manga/real-man.25641",
-        "https://mangakatana.com/manga/deatte-5-byou-de-battle.20133",
         "https://mangakatana.com/manga/mushoku-tensei-isekai-ittara-honki-dasu.145",
-        "https://mangakatana.com/manga/the-heavenly-demon-cant-live-a-normal-life.25847",
         "https://mangakatana.com/manga/heroic-chronicles-of-the-three-continents.25442",
         "https://mangakatana.com/manga/mathematics-golden.25754",
         "https://mangakatana.com/manga/the-beginning-after-the-end.16210",
         "https://mangakatana.com/manga/a-breakthrough-brought-by-forbidden-master-and-disciple.24731",
         "https://mangakatana.com/manga/kengan-omega.22093",
         "https://mangakatana.com/manga/the-worlds-best-assassin-reincarnated-in-a-different-world-as-an-aristocrat.22170",
-        "https://mangakatana.com/manga/daddy-goes-to-school.25820",
         "https://mangakatana.com/manga/the-most-notorious-talker-runs-the-worlds-greatest-clan.24837",
         "https://mangakatana.com/manga/tensei-shitara-slime-datta-ken.1780",
         "https://mangakatana.com/manga/reincarnated-as-an-aristocrat-with-an-appraisal-skill.24873",
-        "https://mangakatana.com/manga/lonely-attack-on-a-different-world.22195",
-        "https://mangakatana.com/manga/lv999-no-murabito.19065",
         "https://mangakatana.com/manga/hero-has-returned.25839",
         "https://mangakatana.com/manga/fff-class-trashero.24073",
         "https://mangakatana.com/manga/spy-x-family.22629",
@@ -43,7 +36,6 @@ mangakatana = [
         "https://mangakatana.com/manga/my-death-flags-show-no-sign-of-ending.24788",
         "https://mangakatana.com/manga/ill-be-the-matriarch-in-this-life.25771",
         "https://mangakatana.com/manga/the-irregular-of-the-royal-academy-of-magic-the-strongest-sorcerer-from-the-slums-is-unrivaled-in-the-school-of-royals.25659",
-        "https://mangakatana.com/manga/the-max-level-hero-has-returned.25329",
         "https://mangakatana.com/manga/skeleton-soldier-couldnt-protect-the-dungeon.20826",
         "http://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
         "https://mangakatana.com/manga/baki-dou-2018.21422",
@@ -55,7 +47,6 @@ mangakatana = [
         "https://mangakatana.com/manga/a-returners-magic-should-be-special.21724",
         "https://mangakatana.com/manga/poison-dragon-the-legend-of-an-asura.25738",
         "https://mangakatana.com/manga/blue-lock.22750",
-        "https://mangakatana.com/manga/memorize.25262"
     ]
 
 def mangakatana_func():
