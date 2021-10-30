@@ -9,9 +9,12 @@ import time
 header = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"}
 
 mangakatana = [
-        "https://mangakatana.com/manga/again-my-life.24399",
         "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
         "https://mangakatana.com/manga/a-stepmothers-fairy-tale.23902",
+        "https://mangakatana.com/manga/ryuu-kusari-no-ori-kokoro-no-uchi-no-kokoro.25821",
+        "https://mangakatana.com/manga/saikyou-yuusha-wa-oharai-hako-maou-ni-nattara-zutto-ore-no-musou-return.22825",
+        "https://mangakatana.com/manga/murim-login.24856",
+        "https://mangakatana.com/manga/im-really-not-the-evil-gods-lackey.25952",
         "https://mangakatana.com/manga/send-my-regards-to-kenshiro.24571",
         "https://mangakatana.com/manga/seoul-station-druid.25869",
         "https://mangakatana.com/manga/survival-story-of-a-sword-king-in-a-fantasy-world.24146",
