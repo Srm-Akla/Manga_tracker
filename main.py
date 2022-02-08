@@ -5,12 +5,22 @@
 from bs4 import BeautifulSoup 
 import requests
 import time
+from rich.console import Console
+from rich.table import Table
+from rich import box
 
-header = {"User-Agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0"}
+console = Console(soft_wrap=True)
+table = Table(title="Manga", box=box.MINIMAL_DOUBLE_HEAD)
+
+header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"}
 
 mangakatana = [
         "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
+        "https://mangakatana.com/manga/duke-pendragon.26081",
+        "https://mangakatana.com/manga/arcane-sniper.25672",
+        "https://mangakatana.com/manga/the-world-after-the-fall.26154",
         "https://mangakatana.com/manga/a-stepmothers-fairy-tale.23902",
+        "https://mangakatana.com/manga/the-executed-sage-is-reincarnated-as-a-lich-and-starts-an-all-out-war.24836",
         "https://mangakatana.com/manga/ryuu-kusari-no-ori-kokoro-no-uchi-no-kokoro.25821",
         "https://mangakatana.com/manga/saikyou-yuusha-wa-oharai-hako-maou-ni-nattara-zutto-ore-no-musou-return.22825",
         "https://mangakatana.com/manga/murim-login.24856",
@@ -40,10 +50,16 @@ mangakatana = [
         "https://mangakatana.com/manga/ill-be-the-matriarch-in-this-life.25771",
         "https://mangakatana.com/manga/the-irregular-of-the-royal-academy-of-magic-the-strongest-sorcerer-from-the-slums-is-unrivaled-in-the-school-of-royals.25659",
         "https://mangakatana.com/manga/skeleton-soldier-couldnt-protect-the-dungeon.20826",
-        "http://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
+        "https://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
         "https://mangakatana.com/manga/baki-dou-2018.21422",
-        "http://mangakatana.com/manga/juujika-no-rokunin.25073",
-        "http://mangakatana.com/manga/karakai-jouzu-no-moto-takagi-san.19332",
+        "https://mangakatana.com/manga/hell-mode-yarikomi-suki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru.25325",
+        "https://mangakatana.com/manga/tokyo-babel.25284",
+        "https://mangakatana.com/manga/her-majestys-swarm.25067",
+        "https://mangakatana.com/manga/tenkaichi-nihon-saikyou-bugeisha-ketteisen.26075",
+        "https://mangakatana.com/manga/record-of-ragnarok.22096",
+        "https://mangakatana.com/manga/the-tutorial-is-too-hard.25633",
+        "https://mangakatana.com/manga/juujika-no-rokunin.25073",
+        "https://mangakatana.com/manga/karakai-jouzu-no-moto-takagi-san.19332",
         "https://mangakatana.com/manga/reformation-of-the-deadbeat-noble.25854",
         "https://mangakatana.com/manga/the-eminence-in-shadow.22020",
         "https://mangakatana.com/manga/mashle.24506",
@@ -53,6 +69,11 @@ mangakatana = [
     ]
 
 def mangakatana_func():
+
+    table.add_column("Status", justify="center", style="bold orange_red1", no_wrap=False)
+    table.add_column("Date", justify="center", style="magenta")
+    table.add_column("Link", justify="left", style="green", no_wrap=False)
+
     for i in mangakatana:
         page = requests.get(i, headers=header).text
         soup = BeautifulSoup(page, "lxml")
@@ -61,9 +82,12 @@ def mangakatana_func():
         try:
             status = soup.find('span', class_='new').text
         except:
-            status='\033[32mNaN'
+            status='[dark_cyan]NaN[/]'
             #status=""
-        print('- \033[1;31m', status, '\033[00m -- \033[33m', chapter_date, '\033[00m -- \033[4;37m', i, '\033[00m')
+        #console.print(f" [bold orange_red1]{status}[/] -- [bold magenta]{chapter_date}[/] -- [yellow]{i}[/]")
+        table.add_row(status, chapter_date, i)
+
+    console.print(table)
 
 if __name__ == "__main__":
     #mangaread_func()
