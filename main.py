@@ -8,18 +8,27 @@ import time
 from rich.console import Console
 from rich.table import Table
 from rich import box
+from rich.progress import Progress
 
 console = Console(soft_wrap=True)
 table = Table(title="Manga", box=box.MINIMAL_DOUBLE_HEAD)
+global manga_name, chapter_date, status
 
 header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"}
 
-mangakatana = [
+mangakatana = (
+        "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
+)
+
+something = (
         "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
         "https://mangakatana.com/manga/duke-pendragon.26081",
+        "https://mangakatana.com/manga/ijimeru-aitsu-ga-waruinoka-ijimerareta-boku-ga-waruinoka.25455",
         "https://mangakatana.com/manga/arcane-sniper.25672",
         "https://mangakatana.com/manga/the-world-after-the-fall.26154",
+        "https://mangakatana.com/manga/the-return-of-the-disaster-class-hero.26080",
         "https://mangakatana.com/manga/a-stepmothers-fairy-tale.23902",
+        "https://mangakatana.com/manga/how-to-fight.24910",
         "https://mangakatana.com/manga/the-executed-sage-is-reincarnated-as-a-lich-and-starts-an-all-out-war.24836",
         "https://mangakatana.com/manga/ryuu-kusari-no-ori-kokoro-no-uchi-no-kokoro.25821",
         "https://mangakatana.com/manga/saikyou-yuusha-wa-oharai-hako-maou-ni-nattara-zutto-ore-no-musou-return.22825",
@@ -49,6 +58,7 @@ mangakatana = [
         "https://mangakatana.com/manga/my-death-flags-show-no-sign-of-ending.24788",
         "https://mangakatana.com/manga/ill-be-the-matriarch-in-this-life.25771",
         "https://mangakatana.com/manga/the-irregular-of-the-royal-academy-of-magic-the-strongest-sorcerer-from-the-slums-is-unrivaled-in-the-school-of-royals.25659",
+        "https://mangakatana.com/manga/talent-swallowing-magician.26091",
         "https://mangakatana.com/manga/skeleton-soldier-couldnt-protect-the-dungeon.20826",
         "https://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
         "https://mangakatana.com/manga/baki-dou-2018.21422",
@@ -62,33 +72,42 @@ mangakatana = [
         "https://mangakatana.com/manga/karakai-jouzu-no-moto-takagi-san.19332",
         "https://mangakatana.com/manga/reformation-of-the-deadbeat-noble.25854",
         "https://mangakatana.com/manga/the-eminence-in-shadow.22020",
-        "https://mangakatana.com/manga/mashle.24506",
         "https://mangakatana.com/manga/a-returners-magic-should-be-special.21724",
         "https://mangakatana.com/manga/poison-dragon-the-legend-of-an-asura.25738",
         "https://mangakatana.com/manga/blue-lock.22750",
-    ]
+)
 
-def mangakatana_func():
+def get_page(args):
+    page = requests.get(args, headers=header).text
+    soup = BeautifulSoup(page, "lxml")
+    manga_name = soup.title.text
+    chapter_date = soup.find('div', class_='update_time').text
+    try:
+        status = soup.find('span', class_='new').text
+    except:
+        status='[dark_cyan]NaN[/]'
+
+    return manga_name, chapter_date, status
+    #console.print("{} -- {} -- {}".format(manga_name, args, status))
+
+def progress_bar():
+    task1 = Progress().add_task("[red]printing", total=1000)
+    while not Progress().finished:
+        Progress().update(task1, advanced=0.3)
+    print("Hello")
+
+def draw_table():
 
     table.add_column("Status", justify="center", style="bold orange_red1", no_wrap=False)
     table.add_column("Date", justify="center", style="magenta")
     table.add_column("Link", justify="left", style="green", no_wrap=False)
 
     for i in mangakatana:
-        page = requests.get(i, headers=header).text
-        soup = BeautifulSoup(page, "lxml")
-        manga_name = soup.title.text
-        chapter_date = soup.find('div', class_='update_time').text
-        try:
-            status = soup.find('span', class_='new').text
-        except:
-            status='[dark_cyan]NaN[/]'
-            #status=""
+        manga_name, chapter_date, status = get_page(i)
         #console.print(f" [bold orange_red1]{status}[/] -- [bold magenta]{chapter_date}[/] -- [yellow]{i}[/]")
-        table.add_row(status, chapter_date, i)
+        table.add_row(status, chapter_date, manga_name)
 
     console.print(table)
 
 if __name__ == "__main__":
-    #mangaread_func()
-    mangakatana_func()
+    draw_table()
