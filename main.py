@@ -53,7 +53,7 @@ mangakatana = [
         "https://mangakatana.com/manga/the-hero-who-has-no-class-i-dont-need-any-skills-its-okay.22853",
         "https://mangakatana.com/manga/baki-dou-2018.21422",
         "https://mangakatana.com/manga/hell-mode-yarikomi-suki-no-gamer-wa-hai-settei-no-isekai-de-musou-suru.25325",
-        "https://mangakatana.com/manga/tokyo-babel.25284",
+        #"https://mangakatana.com/manga/tokyo-babel.25284",
         "https://mangakatana.com/manga/her-majestys-swarm.25067",
         "https://mangakatana.com/manga/tenkaichi-nihon-saikyou-bugeisha-ketteisen.26075",
         "https://mangakatana.com/manga/record-of-ragnarok.22096",
