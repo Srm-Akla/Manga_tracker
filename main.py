@@ -90,14 +90,7 @@ def get_page(args):
     return manga_name, chapter_date, status
     #console.print("{} -- {} -- {}".format(manga_name, args, status))
 
-def progress_bar():
-    task1 = Progress().add_task("[red]printing", total=1000)
-    while not Progress().finished:
-        Progress().update(task1, advanced=0.3)
-    print("Hello")
-
 def draw_table():
-
     table.add_column("Status", justify="center", style="bold orange_red1", no_wrap=False)
     table.add_column("Date", justify="center", style="magenta")
     table.add_column("Link", justify="left", style="green", no_wrap=False)
@@ -108,6 +101,12 @@ def draw_table():
         table.add_row(status, chapter_date, manga_name)
 
     console.print(table)
+
+def progress_bar():
+    task1 = Progress().add_task("[red]printing", total=1000)
+    while not Progress().finished:
+        Progress().update(task1, advanced=0.3)
+    print("Hello")
 
 if __name__ == "__main__":
     draw_table()

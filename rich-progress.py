@@ -13,5 +13,5 @@ progress = Progress(text_column, bar_column, expand=True)
 
 with progress:
     for n in progress.track(sometuple):
-        sleep(0.1)
+        sleep(1)
 
