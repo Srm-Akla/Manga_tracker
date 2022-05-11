@@ -18,14 +18,14 @@ console = Console(soft_wrap=True)
 table = Table(title="Manga", box=box.MINIMAL_DOUBLE_HEAD)
 header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"}
 
-#mangakatana = [
-#    "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
-#]
+mangakatana = [
+    "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
+]
 
-f = open("list.txt","r")
-mangakatana = f.readlines()
+#f = open("list.txt","r")
+#mangakatana = f.readline()
 #print(mangakatana)
-f.close()
+#f.close()
 
 class Manga:
     def __init__(self, console, table, header):
