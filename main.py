@@ -10,6 +10,7 @@ try:
     from rich.table import Table
     from rich import box
     from rich.progress import Progress
+    import manga
 except ImportError:
     print("Import Error, Did you install it?")
     exit(1)
@@ -17,15 +18,6 @@ except ImportError:
 console = Console(soft_wrap=True)
 table = Table(title="Manga", box=box.MINIMAL_DOUBLE_HEAD)
 header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101 Firefox/96.0"}
-
-mangakatana = [
-    "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
-]
-
-#f = open("list.txt","r")
-#mangakatana = f.readline()
-#print(mangakatana)
-#f.close()
 
 class Manga:
     def __init__(self, console, table, header):
@@ -56,9 +48,9 @@ class Manga:
         self.table.add_column("Date", justify="center", style="magenta")
         self.table.add_column("Link", justify="left", style="green", no_wrap=False)
     
-        for i in mangakatana:
+        for i in manga.mangakatana:
             self.manga_name, self.chapter_date, self.status = self.get_page(i)
-            self.table.add_row(self.status, self.chapter_date, self.manga_name)
+            self.table.add_row(self.status, self.chapter_date, i)
     
         self.console.print(self.table)
     
