@@ -1,11 +1,8 @@
 mangakatana = (
     "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
     "https://mangakatana.com/manga/duke-pendragon.26081",
-)
-something = (
     "https://mangakatana.com/manga/ijimeru-aitsu-ga-waruinoka-ijimerareta-boku-ga-waruinoka.25455",
     "https://mangakatana.com/manga/arcane-sniper.25672",
-    "https://mangakatana.com/manga/the-world-after-the-fall.26154",
     "https://mangakatana.com/manga/the-return-of-the-disaster-class-hero.26080",
     "https://mangakatana.com/manga/a-stepmothers-fairy-tale.23902",
     "https://mangakatana.com/manga/how-to-fight.24910",

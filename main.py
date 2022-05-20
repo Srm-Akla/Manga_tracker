@@ -6,11 +6,11 @@ try:
     from bs4 import BeautifulSoup 
     import requests
     import time
+    import manga
     from rich.console import Console
     from rich.table import Table
     from rich import box
     from rich.progress import Progress
-    import manga
 except ImportError:
     print("Import Error, Did you install it?")
     exit(1)
@@ -21,6 +21,7 @@ header = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:96.0) Gecko/20100101
 
 class Manga:
     def __init__(self, console, table, header):
+        console.print("[bold yellow] Starting... [/]")
         self.console = console
         self.table = table
         self.header = header
