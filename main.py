@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 #
+# TODO:
+# - [ ] Progress bar
+# - [ ] Open links when clicked on name
+# - [ ] Save missed manga to file
+# - [ ] Argparse
 #Manga_tracker - Checks if new chapter is out.
 
 try:
@@ -33,27 +38,37 @@ class Manga:
         try:
             self.status = self.soup.find('span', class_='new').text
         except:
-            self.status='[dark_cyan]NaN[/]'
+            self.status=''
     
         return self.manga_name, self.chapter_date, self.status
     
-    def progress_bar(self):
-        task1 = Progress().add_task("[red]printing", total=1000)
-        while not Progress().finished:
-            Progress().update(task1, advanced=0.3)
-        print("Hello")
+    #def progress_bar(self):
+    #    task1 = Progress().add_task("[red]printing", total=1000)
+    #    while not Progress().finished:
+    #        Progress().update(task1, advanced=0.3)
+    #    print("Hello")
 
     def draw_table(self):
         self.table.add_column("Status", justify="center", style="bold orange_red1", no_wrap=False)
         self.table.add_column("Date", justify="center", style="magenta")
         self.table.add_column("Link", justify="left", style="green", no_wrap=False)
     
-        for i in manga.mangakatana:
+        for i in manga.something:
             self.manga_name, self.chapter_date, self.status = self.get_page(i)
             self.table.add_row(self.status, self.chapter_date, i)
     
         self.console.print(self.table)
+
+    def write_to_table(self):
+        with open('ToRead.txt', 'a') as f:
+            self.current_time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
+            f.write("{}\n".format(self.current_time))
+            for i in manga.something:
+                self.manga_name, self.chapter_date, self.status = self.get_page(i)
+                if self.status == "New":
+                    f.write("{}\n".format(i))
+
     
 
 if __name__ == "__main__":
-    Manga(console, table, header).draw_table()
+    Manga(console, table, header).write_to_table()
