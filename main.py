@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 #
 # TODO:
-# - [ ] Progress bar
+# - [-] Progress bar
 # - [ ] Open links when clicked on name
-# - [ ] Save missed manga to file
+# - [X] Save missed manga to file
 # - [ ] Argparse
 #Manga_tracker - Checks if new chapter is out.
 
@@ -54,7 +54,7 @@ class Manga:
         self.table.add_column("Date", justify="center", style="magenta")
         self.table.add_column("Link", justify="left", style="green", no_wrap=False)
     
-        for i in manga.something:
+        for i in manga.mangakatana:
             self.manga_name, self.chapter_date, self.status = self.get_page(i)
             self.table.add_row(self.status, self.chapter_date, i)
     
@@ -64,7 +64,7 @@ class Manga:
         with open('ToRead.txt', 'a') as f:
             self.current_time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
             f.write("{}\n".format(self.current_time))
-            for i in manga.something:
+            for i in manga.mangakatana:
                 self.manga_name, self.chapter_date, self.status = self.get_page(i)
                 if self.status == "New":
                     f.write("{}\n".format(i))
@@ -72,4 +72,4 @@ class Manga:
     
 
 if __name__ == "__main__":
-    Manga(console, table, header).write_to_table()
+    Manga(console, table, header).draw_table()

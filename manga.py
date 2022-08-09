@@ -1,4 +1,5 @@
 mangakatana = (
+    "https://mangakatana.com/manga/the-heavenly-demon-cant-live-a-normal-life.25847",
     "https://mangakatana.com/manga/legend-of-the-northern-blade.24729",
     "https://mangakatana.com/manga/swordmasters-youngest-son.26266",
     "https://mangakatana.com/manga/duke-pendragon.26081",
