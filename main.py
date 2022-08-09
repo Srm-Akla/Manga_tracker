@@ -16,6 +16,7 @@ try:
     from rich.table import Table
     from rich import box
     from rich.progress import Progress
+    import argparse
 except ImportError:
     print("Import Error, Did you install it?")
     exit(1)
@@ -60,7 +61,7 @@ class Manga:
     
         self.console.print(self.table)
 
-    def write_to_table(self):
+    def write_to_file(self):
         with open('ToRead.txt', 'a') as f:
             self.current_time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
             f.write("{}\n".format(self.current_time))
@@ -72,4 +73,13 @@ class Manga:
     
 
 if __name__ == "__main__":
-    Manga(console, table, header).draw_table()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--table", help="Draw table", action="store_true")
+    parser.add_argument("-w", "--write", help="Write to file", action="store_true")
+    args = parser.parse_args()
+
+    if args.write:
+        Manga(console, table, header).write_to_file()
+    elif args.table:
+        Manga(console, table, header).draw_table()
