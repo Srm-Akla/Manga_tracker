@@ -7,18 +7,19 @@
 # - [ ] Argparse
 #Manga_tracker - Checks if new chapter is out.
 
-try:
-    from bs4 import BeautifulSoup 
-    import requests
-    import time
-    from rich.console import Console
-    from rich.table import Table
-    from rich import box
-    from rich.progress import Progress
-    import manga
-except ImportError:
-    print("Import Error, Did you install it?")
-    exit(1)
+#try:
+from bs4 import BeautifulSoup 
+import requests
+import time
+from rich.console import Console
+from rich.table import Table
+from rich import box
+from rich.progress import Progress
+import argparse
+import manga
+#except ImportError:
+#    print("Import Error, Did you install it?")
+#    exit(1)
 
 console = Console(soft_wrap=True)
 table = Table(title="Manga", box=box.MINIMAL_DOUBLE_HEAD)
@@ -53,17 +54,17 @@ class Manga:
         self.table.add_column("Date", justify="center", style="magenta")
         self.table.add_column("Link", justify="left", style="green", no_wrap=False)
     
-        for i in manga.something:
+        for i in manga.mangakatana:
             self.manga_name, self.chapter_date, self.status = self.get_page(i)
             self.table.add_row(self.status, self.chapter_date, i)
     
         self.console.print(self.table)
 
-    def write_to_table(self):
+    def write_to_file(self):
         with open('ToRead.txt', 'a') as f:
             self.current_time = time.strftime("%a, %d %b %Y %H:%M:%S", time.gmtime())
             f.write("{}\n".format(self.current_time))
-            for i in manga.something:
+            for i in manga.mangakatana:
                 self.manga_name, self.chapter_date, self.status = self.get_page(i)
                 if self.status == "New":
                     f.write("{}\n".format(i))
@@ -71,4 +72,14 @@ class Manga:
     
 
 if __name__ == "__main__":
-    Manga(console, table, header).write_to_table()
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-t", "--table", help="Draw table", action="store_true")
+    parser.add_argument("-w", "--write", help="Write to file", action="store_true")
+    args = parser.parse_args()
+
+    if args.write:
+        Manga(console, table, header).write_to_file()
+    elif args.table:
+        Manga(console, table, header).draw_table()
+
